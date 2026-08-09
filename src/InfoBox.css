@@ -1,0 +1,25 @@
+.InfoBox {
+  text-align: center;
+}
+
+.InfoBox h1 {
+  color: white;
+  font-size: 42px;
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.weatherCard {
+  width: 345px;
+  border-radius: 15px !important;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.weatherContent {
+  padding: 18px !important;
+}
