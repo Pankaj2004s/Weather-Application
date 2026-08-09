@@ -35,17 +35,18 @@ export default function SearchBox({updateInfo}) {
     setCity(event.target.value);
   };
   
-  let handleSubmit = async (event) => {
-    try {
-      event.preventDefault();
-      console.log(city);
-      setCity("");
-      let newInfo = await getWeatherInfo();
-      updateInfo(newInfo);
-    } catch (err) {
-      setError(true);
-    }
-  };
+let handleSubmit = async (event) => {
+  event.preventDefault();
+  setCity("");
+  try {
+    let newInfo = await getWeatherInfo();
+    setError(false);
+    updateInfo(newInfo);
+  } catch (err) {
+    setError(true);
+    updateInfo(null);
+  }
+};
 
   return (
     <div className="SearchBox">
